@@ -1,0 +1,19 @@
+.Menu {
+    border: 1px dotted gray;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.MenuItem {
+    display: block;
+}
+
+.MenuItem a {
+    text-decoration: none;
+    color: red;
+}
+
+.MenuItem a[class=active] {
+    text-decoration: underline;
+}
