@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu } from "./Menu";
 import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
+import { Header } from "./Header";
 
 export function MainPage() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -19,7 +19,7 @@ export function MainPage() {
     }, [page]);
 
     return  <>
-        <Menu/>
+        <Header/>
         <h1>Всем привет</h1>
         <p>Это самая главная страница в мире</p>
         {items.map((itemData) => (

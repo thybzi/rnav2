@@ -1,8 +1,8 @@
-import { Menu } from "./Menu";
+import { Header } from "./Header";
 
 export function ContactPage() {
     return <>
-        <Menu/>
+        <Header/>
         <h1>Наши контакты</h1>
         <p>Телефона нет, стучите</p>
     </>
