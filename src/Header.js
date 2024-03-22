@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { Menu } from "./Menu";
 import { UserBlock } from "./UserBlock";
 import { LoginForm } from "./LoginForm";
 import { AppContext } from "./App";
 
-export function Header() {
+export const Header = memo(function() {
     const {authData: {isLoggedIn, login, name}} = useContext(AppContext);
 
     console.log(isLoggedIn, login, name)
@@ -15,4 +15,4 @@ export function Header() {
             {isLoggedIn ? <UserBlock/> : <LoginForm/>}
         </header>
     );
-}
+})
