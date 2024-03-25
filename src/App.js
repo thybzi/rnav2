@@ -2,9 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { MainPage } from "./MainPage";
 import { AboutPage } from "./AboutPage";
 import { ContactPage } from "./ContactPage";
-import { createContext, useState } from "react";
-
-export const AppContext = createContext(null);
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const router = createBrowserRouter([
     {
@@ -22,18 +21,9 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-    const [authData, setAuthData] = useState({
-        isLoggedIn: false,
-        login: null,
-        name: null,
-    });
-
     return (
-        <AppContext.Provider value={{
-            authData,
-            setAuthData,
-        }}>
+        <Provider store={store}>
             <RouterProvider router={router} />
-        </AppContext.Provider>
+        </Provider>
     );
 }

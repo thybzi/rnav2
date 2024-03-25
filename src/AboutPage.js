@@ -1,11 +1,11 @@
-import { useCallback, useContext, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Header } from "./Header";
-import { AppContext } from "./App";
 import { Input } from "./Input";
 import { ArrayBlock } from "./ArrayBlock";
+import { store } from "./store/store";
 
 export function AboutPage() {
-    const {authData: {name}} = useContext(AppContext);
+    const {authData: {name}} = store.getState();
     const [firstName, setFirstName] = useState('John');
     const [lastName, setLastName] = useState('Smith');
 

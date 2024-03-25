@@ -1,18 +1,14 @@
-import { useContext } from "react";
-import { AppContext } from "./App";
+import { store } from "./store/store";
+import { logOut } from "./store/actions";
 
 export function UserBlock() {
-    const {authData: {login}, setAuthData} = useContext(AppContext);
+    const {authData: {login}} = store.getState();
 
     return (
         <div>
             {login}
             <button onClick={() => {
-                setAuthData({
-                    isLoggedIn: false,
-                    login: null,
-                    name: null,
-                });
+                store.dispatch(logOut);
             }}>Выйти</button>
         </div>
     );

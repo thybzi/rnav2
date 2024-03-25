@@ -1,11 +1,11 @@
-import { memo, useContext } from "react";
+import { memo } from "react";
 import { Menu } from "./Menu";
 import { UserBlock } from "./UserBlock";
 import { LoginForm } from "./LoginForm";
-import { AppContext } from "./App";
+import { store } from "./store/store";
 
 export const Header = memo(function() {
-    const {authData: {isLoggedIn, login, name}} = useContext(AppContext);
+    const {authData: {isLoggedIn, login, name}} = store.getState();
 
     console.log(isLoggedIn, login, name)
 
